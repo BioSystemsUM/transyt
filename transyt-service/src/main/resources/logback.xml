@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %M %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+ 			<fileNamePattern>/workdir/logs/logFile_%d{yyyy-MM-dd}.log
+<!-- 			<fileNamePattern>./../logs/logFile_%d{yyyy-MM-dd}.log -->
+			</fileNamePattern>
+
+			<!-- keep 30 days' worth of history capped at 3GB total size -->
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>200MB</totalSizeCap>
+
+		</rollingPolicy>
+	</appender>
+
+
+
+	<logger name="org.springframework" level="INFO" />
+	<logger name="org.springframework.web" level="INFO" />
+	<logger name="org.hibernate" level="INFO" />
+	<logger name="org.apache" level="OFF" />
+	<logger name="httpclient.wire" level="INFO" />
+
+	 <logger name="pt.uminho.ceb.biosystems.transyt.scraper.APIs.UniprotAPIExtension" level="ERROR" /> 
+	<!--	<logger name="pt.uminho.ceb.biosystems.mew" level="INFO" /> <logger name="internalDB.WriteByMetabolitesID" 
+		level="TRACE" /> -->
+
+
+
+	<root level="TRACE">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+
+</configuration>

@@ -1,3 +1,6 @@
-/target/
 /TranSyT_validation_scripts/.idea
 /TranSyT_validation_scripts/__pycache__
+transyt-scraper/target
+transyt-service/target
+transyt-service/logs
+transyt-utilities/target

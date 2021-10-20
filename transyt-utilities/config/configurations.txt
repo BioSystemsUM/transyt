@@ -1,0 +1,52 @@
+							####	CONFIGURATION FILE	####
+
+#This file contains the configurations in which TranSyT depends.
+#All configurations are editable, just place the value or array of values desired next to the "=" sign after the keyWord
+
+# 1 - E-value threshold to automatically accept result (use the format xE-x where x represents numbers).
+EvalueAccept=1E-50
+
+# 2 - Similarity score blast TCDB
+similarity=0.3
+
+# 3 - Name of the current version of the TranSyT database in use located at '.../service/transytdb/'
+dbname=triage83.db
+
+# 4 - Relative path to the temp directory (used to save temporary files)
+#temp=transyt-scraper/temp/
+
+# 5 - Relative path to the TCDB_queries_Backup directory (used to debug purposes only)
+#queriesBackupPath=temp=triage/Files/TCDB_queries_Backup/
+
+# 6 - Relative path to the TCDB_queries_Backup directory (used to debug purposes only)
+#queriesBackupPath=temp=transyt-scraper/Files/TCDB_queries_Backup/
+
+# 7 - E-value threshold for blast against TCDB sequences file (use the format xE-x where x represents numbers).
+Evalue=1E-10
+
+# 8 - Blast query coverage threshold.
+coverage=0.8
+
+# 9 - Blast bit score threshold.
+bitScore=50
+
+# 10 - Select the IDs to generate the reactions. Select 'ModelSEED', 'BiGG', 'MetaCyc', or KEGG. MetaCyc is selected by default
+IDsDatabase=ModelSEED
+
+# 11 - Allowed difference between compartments (set a value between 0% and 50%).
+difference=30
+
+# 12 - Minimum alpha helices.
+helices=1
+
+# 13 - Minimum beta strands for barrels identification.
+strands=8
+
+# 14 - URI for bolt connection to TranSyT's internal database.
+uri=bolt://localhost:7687
+
+# 15 - Database username
+username=neo4j
+
+# 16 - Database password
+password=password
